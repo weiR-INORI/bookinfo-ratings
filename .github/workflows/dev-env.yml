@@ -24,3 +24,5 @@ jobs:
       # - run: docker build -t ghcr.io/weir-inori/bookinfo-ratings:dev .
       # - run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       # - run: docker push ghcr.io/weir-inori/bookinfo-ratings:dev
+
+      
