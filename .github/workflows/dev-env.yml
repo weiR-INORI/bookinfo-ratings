@@ -53,5 +53,6 @@ jobs:
     steps:
       - name: Check health check page
         run: curl http://bookinfo.dev.opsta.net/student3/ratings/health | grep "Ratings is working"          
+    
 
         
