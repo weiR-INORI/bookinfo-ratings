@@ -19,7 +19,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:        
           push: true
-          tags: ghcr.io/weir-inori/bookinfo-ratings:dev
+          tags: ghcr.io/weir-inori/bookinfo-ratings:uat
     
   deploy:
     needs: build
@@ -37,10 +37,10 @@ jobs:
         uses: deliverybot/helm@v1
         with:
           helm: helm3
-          release: bookinfo-dev-ratings
-          namespace: student3-bookinfo-dev
+          release: bookinfo-uat-ratings
+          namespace: student3-bookinfo-uat
           chart: k8s/helm
-          value-files: k8s/helm-values/values-bookinfo-dev-ratings.yaml
+          value-files: k8s/helm-values/values-bookinfo-uat-ratings.yaml
           values: |
             {
               "extraEnv": {
