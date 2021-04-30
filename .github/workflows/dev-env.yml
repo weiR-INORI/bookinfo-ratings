@@ -22,4 +22,6 @@ jobs:
           tags: ghcr.io/weir-inori/bookinfo-ratings:dev
     
 
+    
+
 
