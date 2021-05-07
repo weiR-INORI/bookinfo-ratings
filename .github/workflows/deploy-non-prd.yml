@@ -51,3 +51,11 @@ jobs:
                 "COMMIT_SHA": "${{ github.sha }}"
               }
             }
+  acceptance-test:
+    needs: deploy
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Set env
+        run: echo "ENV_NAME=$( [ "$GITHUB_REF" == "refs/heads/master" ] && echo 'uat' || echo ${GITHUB_REF##*/} )" >> $GITHUB_ENV
+      - name: Acceptance Test
+        run: curl http://bookinfo.${{ env.ENV_NAME }}.opsta.net/student3/ratings/health | grep "Ratings is working"          
