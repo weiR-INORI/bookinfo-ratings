@@ -35,4 +35,4 @@ jobs:
         with:
           src: ghcr.io/weir-inori/bookinfo-ratings:uat
           dst: |
-            ghcr.io/[GITHUB_USER]/bookinfo-ratings:${{needs.git-tag.outputs.tag-version}}
+            ghcr.io/weir-inori/bookinfo-ratings:${{needs.git-tag.outputs.tag-version}}
